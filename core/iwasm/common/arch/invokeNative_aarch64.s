@@ -4,14 +4,18 @@
  */
         .text
         .align  2
-#ifndef BH_PLATFORM_DARWIN
-        .globl invokeNative
-        .type  invokeNative, function
-invokeNative:
-#else
+; FIXME: must work with Apple M chips
+; #ifndef BH_PLATFORM_DARWIN
+;         .globl invokeNative
+;         .type  invokeNative, function
+; invokeNative:
+; #else
+;         .globl _invokeNative
+; _invokeNative:
+; #endif /* end of BH_PLATFORM_DARWIN */
+
         .globl _invokeNative
 _invokeNative:
-#endif /* end of BH_PLATFORM_DARWIN */
 
 /*
  * Arguments passed in:
